@@ -1,6 +1,7 @@
 {
   "name": "autolact",
   "version": "0.1.0",
+  "homepage": "https://Santiago1307F.github.io/autolact-web",
   "private": true,
   "dependencies": {
     "@emailjs/browser": "^5.0.3",
