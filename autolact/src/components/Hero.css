@@ -1,0 +1,226 @@
+.hero {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  padding: 7rem 2rem 4rem;
+  overflow: hidden;
+  background: var(--color-bg, #FFFFFF);
+}
+
+.hero__grid {
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+}
+
+/* Background grid pattern */
+.hero__bg-pattern {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background-image:
+    linear-gradient(rgba(10, 92, 107, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(10, 92, 107, 0.03) 1px, transparent 1px);
+  background-size: 60px 60px;
+  z-index: 0;
+}
+
+.hero__content,
+.hero__visual {
+  position: relative;
+  z-index: 1;
+}
+
+/* Badge */
+.hero__badge {
+  display: inline-block;
+  padding: 0.4rem 1rem;
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  color: var(--color-primary, #0A5C6B);
+  background: var(--color-accent, #E8F4F6);
+  border-radius: 50px;
+  margin-bottom: 1.5rem;
+}
+
+/* Title */
+.hero__title {
+  font-size: 3.2rem;
+  font-weight: 800;
+  line-height: 1.12;
+  color: var(--color-dark, #1A1A2E);
+  margin: 0 0 1.25rem;
+  letter-spacing: -0.02em;
+}
+
+/* Subtitle */
+.hero__subtitle {
+  font-size: 1.1rem;
+  line-height: 1.7;
+  color: var(--color-text-light, #666666);
+  margin: 0 0 2.5rem;
+  max-width: 520px;
+}
+
+/* Stats */
+.hero__stats {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+  margin-bottom: 2.5rem;
+}
+
+.hero__stat {
+  display: flex;
+  flex-direction: column;
+  padding: 0.75rem 0;
+  border-left: 2px solid var(--color-primary, #0A5C6B);
+  padding-left: 0.75rem;
+}
+
+.hero__stat-value {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--color-dark, #1A1A2E);
+}
+
+.hero__stat-label {
+  font-size: 0.78rem;
+  color: var(--color-text-light, #666666);
+  margin-top: 0.15rem;
+}
+
+/* Buttons */
+.hero__buttons {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.hero__btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.85rem 1.8rem;
+  font-size: 0.95rem;
+  font-weight: 600;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: all var(--transition-fast, 0.2s ease);
+  cursor: pointer;
+}
+
+.hero__btn--primary {
+  background: var(--color-primary, #0A5C6B);
+  color: #fff;
+}
+
+.hero__btn--primary:hover {
+  background: var(--color-primary-dark, #084A56);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(10, 92, 107, 0.3);
+}
+
+.hero__btn--outline {
+  background: transparent;
+  color: var(--color-primary, #0A5C6B);
+  border: 2px solid var(--color-primary, #0A5C6B);
+}
+
+.hero__btn--outline:hover {
+  background: var(--color-primary, #0A5C6B);
+  color: #fff;
+  transform: translateY(-2px);
+}
+
+/* Visual / Machine placeholder */
+.hero__visual {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hero__image-wrapper {
+  width: 100%;
+  max-width: 460px;
+  aspect-ratio: 1 / 1;
+  border-radius: 24px;
+  background: linear-gradient(145deg, #0A5C6B, #084A56);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 24px 60px rgba(10, 92, 107, 0.25);
+  position: relative;
+  overflow: hidden;
+}
+
+.hero__image-wrapper::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 30% 30%, rgba(255,255,255,0.08) 0%, transparent 60%);
+}
+
+.hero__machine-svg {
+  width: 80%;
+  height: 80%;
+  position: relative;
+  z-index: 1;
+}
+
+/* Responsive */
+@media (max-width: 960px) {
+  .hero__grid {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+
+  .hero__title {
+    font-size: 2.4rem;
+  }
+
+  .hero__stats {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .hero__visual {
+    order: -1;
+  }
+
+  .hero__image-wrapper {
+    max-width: 340px;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero {
+    padding: 6rem 1.25rem 3rem;
+  }
+
+  .hero__title {
+    font-size: 2rem;
+  }
+
+  .hero__subtitle {
+    font-size: 1rem;
+  }
+
+  .hero__stats {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .hero__buttons {
+    flex-direction: column;
+  }
+
+  .hero__btn {
+    width: 100%;
+    text-align: center;
+  }
+}

@@ -1,0 +1,106 @@
+.applications-section {
+  padding: 100px 0;
+  background-color: var(--color-bg-light);
+}
+
+.applications-header {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.applications-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--color-text);
+  margin-bottom: 16px;
+}
+
+.applications-title-accent {
+  width: 60px;
+  height: 4px;
+  background-color: var(--color-primary);
+  margin: 0 auto;
+  border-radius: 2px;
+}
+
+.applications-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 32px;
+  max-width: 960px;
+  margin: 0 auto 48px;
+}
+
+.application-card {
+  background-color: var(--color-bg);
+  border-radius: 16px;
+  padding: 48px 24px;
+  text-align: center;
+  box-shadow: var(--shadow-sm);
+  border: 1px solid var(--color-border);
+  transition: transform var(--transition-normal), box-shadow var(--transition-normal);
+  cursor: default;
+}
+
+.application-card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-lg);
+}
+
+.application-icon {
+  color: var(--color-primary);
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.application-icon svg {
+  width: 64px;
+  height: 64px;
+}
+
+.application-name {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--color-text);
+  margin: 0;
+}
+
+.applications-disclaimer {
+  text-align: center;
+  font-size: 0.85rem;
+  font-style: italic;
+  color: var(--color-text-lighter);
+  max-width: 700px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+@media (max-width: 992px) {
+  .applications-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+  }
+}
+
+@media (max-width: 768px) {
+  .applications-title {
+    font-size: 1.75rem;
+  }
+
+  .applications-section {
+    padding: 60px 0;
+  }
+
+  .application-card {
+    padding: 36px 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .applications-grid {
+    grid-template-columns: 1fr;
+    max-width: 320px;
+  }
+}
