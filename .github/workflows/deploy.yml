@@ -29,15 +29,17 @@ jobs:
           node-version: 20
 
       - name: Install dependencies
+        working-directory: ./autolact
         run: npm install
 
       - name: Build React
+        working-directory: ./autolact
         run: npm run build
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: build
+          path: autolact/build
 
   deploy:
     runs-on: ubuntu-latest
